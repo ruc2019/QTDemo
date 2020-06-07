@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/SelectionBox.png</file>
+        <file>image/beijing.jpg</file>
+        <file>image/direntubiao.png</file>
+        <file>image/haiyang.png</file>
+        <file>image/xiaodao.png</file>
+        <file>image/lujing.jpg</file>
+        <file>image/Ublack.png</file>
+        <file>image/B 50.png</file>
+        <file>image/B 115.png</file>
+        <file>image/B 99.png</file>
+        <file>image/Upink.png</file>
+        <file>image/kelifulan.png</file>
+        <file>image/beifeng.png</file>
+        <file>image/qiye.png</file>
+        <file>image/hai.jpg</file>
+        <file>image/mubiao.png</file>
+        <file>image/wuqi.png</file>
+        <file>image/qianghua.jpg</file>
+        <file>image/fly.png</file>
+        <file>image/pao1.png</file>
+        <file>image/pao2.png</file>
+        <file>image/yulei.png</file>
+    </qresource>
+</RCC>

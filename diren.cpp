@@ -116,12 +116,12 @@ int diren::GetId() const      //获取编号
     return id;
 }
 
-int diren::GetHealth() const  //获取生命值
+int diren::GetHealth() const  //获取生命
 {
     return health;
 }
 
-void diren::SetHealth(int fhealth)//设置生命值
+void diren::SetHealth(int fhealth)//设置生命
 {
     health = fhealth;
 }

@@ -3,7 +3,7 @@
 
 #include "shipParent.h"
 
-//大炮防御塔类
+//企业类
 class qiye : public shipParent
 {
 protected:

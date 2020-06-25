@@ -2,7 +2,7 @@
 #define SHIPPARENT_H
 
 #include <QString>
-#include "diren.h"    //怪物类头文件
+#include "diren.h"    //敌人类头文件
 
 //防御塔父类
 class shipParent
@@ -13,11 +13,11 @@ protected:
     int width, height;      //宽高
     QString BaseImgPath;    //防御塔底座图片路径
     QString DefImgPath;     //防御塔图片路径
-    int RotatAngle = 0;     //防御塔旋转角度
-    int UpLeftX, UpLeftY;   //防御塔塔坑原坐标
+    int RotatAngle = 0;     //防御塔角度（用于判断子弹）
+    int UpLeftX, UpLeftY;   //防御塔岛原坐标
     int Range;              //防御塔的射程
 
-    diren* aimsmon = NULL;//记录防御塔的目标怪物
+    diren* aimsmon = NULL;//记录防御塔的目标怪
 
     QString BullPath;       //子弹图片路径
     int power;              //子弹威力

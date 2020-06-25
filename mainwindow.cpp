@@ -57,12 +57,11 @@ MainWindow::MainWindow(int LevelNumber) : LevelNumber(LevelNumber)
         {
 
             CoorStr* Waypointarr1[] = {new CoorStr(X40(8, 6)/*X40是两个参数，为X坐标和Y坐标*/), new CoorStr(X40(2, 6)), new CoorStr(X40(2, 13)), new CoorStr(X40(19, 13)), new CoorStr(X40(19, 9)), new CoorStr(homecoor->x, homecoor->y)};
-            CoorStr* Waypointarr2[] = {new CoorStr(X40(20, 5)), new CoorStr(X40(14, 5)), new CoorStr(X40(14, 9)), new CoorStr(X40(8, 9)), new CoorStr(X40(8, 6)), new CoorStr(X40(2, 6)),
-                                             new CoorStr(X40(2, 13)), new CoorStr(X40(19, 13)), new CoorStr(X40(19, 9)), new CoorStr(homecoor->x, homecoor->y)}; //最后的路径点设为家
+            CoorStr* Waypointarr2[] = {new CoorStr(X40(20, 5)), new CoorStr(X40(14, 5)), new CoorStr(X40(14, 9)),new CoorStr(homecoor->x, homecoor->y)}; //最后的路径点设为家
             //起点们
             CoorStr staco[] = {CoorStr(8, 0), CoorStr(20, 0), CoorStr(8, -1), CoorStr(20, -1)};
 
-            int PathLength[] = {sizeof(Waypointarr1)/sizeof(CoorStr*), sizeof(Waypointarr1)/sizeof(CoorStr*)};
+            int PathLength[] = {sizeof(Waypointarr1)/sizeof(CoorStr*), sizeof(Waypointarr2)/sizeof(CoorStr*)};
 
             IrodMonsProgDefa(Waypointarr1, Waypointarr2, staco, PathLength, victorylable);   //使用预设的两条路产生怪物方案
 
@@ -71,13 +70,13 @@ MainWindow::MainWindow(int LevelNumber) : LevelNumber(LevelNumber)
         case 1:
         {
 
-            CoorStr* Waypointarr1[] = {new CoorStr(X40(4, 8)), new CoorStr(X40(20, 8)), new CoorStr(X40(20, 13)), new CoorStr(X40(6, 13)), new CoorStr(homecoor->x, homecoor->y)};
+            CoorStr* Waypointarr1[] = {new CoorStr(X40(4, 8)), new CoorStr(X40(16, 8)), new CoorStr(X40(16, 13)), new CoorStr(X40(6, 13)), new CoorStr(homecoor->x, homecoor->y)};
             CoorStr* Waypointarr2[] = {new CoorStr(X40(11, 8)), new CoorStr(X40(20, 8)), new CoorStr(X40(20, 13)), new CoorStr(X40(6, 13)), new CoorStr(homecoor->x, homecoor->y)};
 
             //起点们
             CoorStr staco[] = {CoorStr(4, 0), CoorStr(11, 0), CoorStr(4, -1), CoorStr(11, -1)};
 
-            int PathLength[] = {sizeof(Waypointarr1)/sizeof(CoorStr*), sizeof(Waypointarr1)/sizeof(CoorStr*)};
+            int PathLength[] = {sizeof(Waypointarr1)/sizeof(CoorStr*), sizeof(Waypointarr2)/sizeof(CoorStr*)};
 
             IrodMonsProgDefa(Waypointarr1, Waypointarr2, staco, PathLength, victorylable);   //使用预设的两条路产生怪物方案
             break;
@@ -251,13 +250,13 @@ void MainWindow::DrawMapArr(QPainter& painter)
         0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 6, 0, 0, 0, 0, 0, 0, 3, 6, 1, 1, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 3, 6, 1, 1, 6, 6, 0, 0, 0, 0, 0, 0, 6, 6, 1, 1, 3, 6, 0, 0, 0,
         0, 0, 0, 0, 0, 6, 6, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 0, 0, 0,
-        0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-        0, 1, 1, 1, 1, 1, 1, 1, 1, 3, 6, 3, 6, 1, 1, 3, 6, 0, 0, 3, 6, 0, 0, 0, 0, 0,
-        0, 1, 1, 3, 6, 0, 0, 1, 1, 6, 6, 6, 6, 1, 1, 6, 6, 0, 0, 6, 6, 0, 0, 0, 0, 0,
-        0, 1, 1, 6, 6, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 5, 1,
-        0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,
-        0, 1, 1, 3, 6, 0, 0, 0, 3, 6, 0, 0, 3, 6, 0, 0, 3, 6, 1, 1, 3, 6, 0, 0, 0, 0,
-        0, 1, 1, 6, 6, 0, 0, 0, 6, 6, 0, 0, 6, 6, 0, 0, 6, 6, 1, 1, 6, 6, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 3, 6, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 6, 6, 1, 1, 3, 6, 0, 0, 3, 6, 0, 0, 0, 0, 0,
+        0, 1, 1, 3, 6, 0, 0, 3, 6, 0, 0, 0, 0, 1, 1, 6, 6, 0, 0, 6, 6, 0, 0, 0, 0, 0,
+        0, 1, 1, 6, 6, 0, 0, 6, 6, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1,
+        0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 1, 1, 3, 6, 0, 0, 3, 6, 0, 0, 3, 6, 0, 0, 0, 3, 6, 1, 1, 3, 6, 0, 0, 0, 0,
+        0, 1, 1, 6, 6, 0, 0, 6, 6, 0, 0, 6, 6, 0, 0, 0, 6, 6, 1, 1, 6, 6, 0, 0, 0, 0,
         0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
         0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -275,9 +274,9 @@ void MainWindow::DrawMapArr(QPainter& painter)
         0, 0, 0, 1, 1, 6, 6, 0, 0, 0, 1, 1, 6, 6, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 6, 0, 0, 0,
         0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 6, 6, 0, 0, 0,
-        0, 0, 0, 0, 3, 6, 0, 0, 0, 0, 0, 0, 0, 3, 6, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 3, 6, 1, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 1, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 3, 6, 0, 0, 0, 0, 0, 0, 0, 3, 6, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 6, 6, 0, 0, 0, 3, 6, 0, 0, 6, 6, 1, 1, 3, 6, 1, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 1, 1, 6, 6, 1, 1, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

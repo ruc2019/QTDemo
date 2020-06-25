@@ -2,20 +2,20 @@
 #define MAINWINDOW_H
 
 #include <QWidget>
-#include <QPainter>     //画家
-#include <QMouseEvent>  //鼠标事件
+#include <QPainter>
+#include <QMouseEvent>  //鼠标
 #include <Qtimer>       //定时器
-#include "dao.h"    //防御塔坑类
-#include "selectionbox.h"       //选择框类
-#include "shipParent.h"    //防御塔父类
-#include "diren.h"    //怪物类
+#include "dao.h"
+#include "selectionbox.h"
+#include "shipParent.h"
+#include "diren.h"
 #include <QLabel>
 
 class MainWindow : public QWidget
 {
 //    Q_OBJECT
 private:
-    QVector<dao*> daoVec;  //防御塔坑数组
+    QVector<dao*> daoVec;  //岛数组
     SelectionBox* SelBox = new SelectionBox(":/image/SelectionBox.png"); //选择框类
 
     QVector<shipParent*> shipVec; //重要防御塔父类数组
@@ -31,34 +31,20 @@ private:
     void DrawDefenseTower(QPainter&);       //画出防御塔
     void DrawMonster(QPainter&);            //画出怪物
     void DrawRangeAndUpgrade(QPainter&);    //画出防御塔攻击范围和升级按钮
-    void DrawExplosion(QPainter&);          //画出爆炸效果
 
     int DisplayRangeX, DisplayRangeY;       //用于记录显示范围的防御塔的坐标
     bool DisplayRange = false;              //用于显示防御塔攻击范围
 
-    struct ExploStr     //爆炸效果结构
-    {
-        CoorStr coor;   //记录爆炸效果的坐标
-        int index = 1;  //记录要显示的图片文件的序号
+    int money = 1000;   //记录石油
+    QLabel *moneylable = new QLabel(this);   //显示石油标签控件
 
-        int ExplRangeWidth;    //爆炸效果宽高
-        int ExplRangeHeight;
-        //爆炸效果需要初始化坐标、效果宽高
-        ExploStr(CoorStr fcoor, int width, int height) : coor(fcoor), ExplRangeWidth(width), ExplRangeHeight(height) {}
-    };
-
-    QVector<ExploStr*> ExploEffectCoor;      //爆炸效果坐标数组
-
-    int money = 1000;   //记录金钱
-    QLabel *moneylable = new QLabel(this);   //显示金钱标签控件
-
-    inline bool DeductionMoney(int);         //判断金钱是否足够并刷新标签
+    inline bool DeductionMoney(int);         //判断石油是否足够并刷新标签
 
     int life = 10;      //生命数量
 
-    int counter = 0;    //用于产生怪物的计数器
+    int counter = 0;    //用于产生怪的计数器
 
-    const int RewardMoney = 28; //每次击败怪物获得的金钱数量
+    const int RewardMoney = 28; //每次击败怪获得的石油数量
 
     CoorStr *homecoor = new CoorStr(0, 0);  //记录家的坐标，从地图中自动获取
 

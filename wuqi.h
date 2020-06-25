@@ -2,7 +2,7 @@
 #define WUQI_H
 
 #include "shipParent.h"
-//光炮类
+//吾妻类
 class wuqi : public shipParent
 {
 protected:

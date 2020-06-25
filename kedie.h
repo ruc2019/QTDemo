@@ -1,9 +1,9 @@
-#ifndef FIRETURRECT_H
-#define FIRETURRECT_H
+#ifndef KEDIE_H
+#define KEDIE_H
 
 #include "shipParent.h"
 
-//火炮塔类，继承防御塔父类
+//克爹类，继承防御塔父类
 class kedie: public shipParent
 {
 protected:

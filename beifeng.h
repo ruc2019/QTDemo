@@ -3,7 +3,7 @@
 
 #include "shipParent.h"
 
-//绿色炮塔类，继承防御塔父类
+//北风类，继承防御塔父类
 class beifeng : public shipParent
 {
 protected:

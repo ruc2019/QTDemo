@@ -10,15 +10,15 @@ class diren
 {
 private:
     QVector<CoorStr*> Waypoint;  //存储怪物路径点数组
-    int mx, my;                  //怪物坐标
-    int mwidth, mheight;         //怪物宽高
-    QString ImgPath;             //怪物图片路径
-    int id;                      //怪物编号
-    int health;                  //怪物生命值
-    const int mspeed = 10;       //怪物每次刷新页面移动的像素距离，这个值必须为10不能更改
+    int mx, my;                  //怪坐标
+    int mwidth, mheight;         //怪宽高
+    QString ImgPath;             //怪图片路径
+    int id;                      //怪编号
+    int health;                  //怪生命
+    const int mspeed = 10;       //怪每次刷新页面移动的距离
 
 public:
-    //参数：路径点数组、路径点的个数、怪物初始坐标、怪物宽度、怪物图片路径
+    //路径点数组、路径点的个数、怪物初始坐标、怪物宽度、怪物图片路径
     diren(CoorStr **pointarr, int arrlength, int x, int y, int fid);  //构造
 
     bool Move();            //怪物移动函数
@@ -29,8 +29,8 @@ public:
     int GetHeight() const;  //获取高
     QString GetImgPath() const; //获取图片路径
     int GetId() const;      //获取编号
-    int GetHealth() const;  //获取生命值
-    void SetHealth(int);    //设置生命值
+    int GetHealth() const;  //获取生命
+    void SetHealth(int);    //设置生命
 };
 
 #endif // DIREN_H
